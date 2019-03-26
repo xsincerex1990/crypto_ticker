@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Btc View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BtcViewController" customModule="crypto_ticker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin.png" translatesAutoresizingMaskIntoConstraints="NO" id="vxC-jO-3QV">
+                                <rect key="frame" x="67" y="136" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr5-SW-RLb">
+                                <rect key="frame" x="33" y="365" width="308" height="82"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oeb-x3-v0N">
+                                <rect key="frame" x="0.0" y="504" width="375" height="216"/>
+                            </pickerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rFo-dx-qKH">
+                                <rect key="frame" x="168" y="741" width="39" height="37"/>
+                                <connections>
+                                    <action selector="PageSwipeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ofK-UO-pSb"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rFo-dx-qKH" secondAttribute="trailing" constant="168" id="0WD-YX-GSn"/>
+                            <constraint firstItem="Oeb-x3-v0N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Ez-ck-Zqw"/>
+                            <constraint firstItem="Oeb-x3-v0N" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ABz-1p-h7A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xr5-SW-RLb" secondAttribute="trailing" constant="34" id="Aoq-Ke-dI1"/>
+                            <constraint firstItem="rFo-dx-qKH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BgE-6H-14P"/>
+                            <constraint firstItem="rFo-dx-qKH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="168" id="FFn-lu-HkJ"/>
+                            <constraint firstItem="Oeb-x3-v0N" firstAttribute="top" secondItem="xr5-SW-RLb" secondAttribute="bottom" constant="57" id="IHB-ph-lDn"/>
+                            <constraint firstItem="xr5-SW-RLb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="321" id="PhE-9U-D6I"/>
+                            <constraint firstItem="vxC-jO-3QV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="aYg-Wv-wNn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Oeb-x3-v0N" secondAttribute="bottom" constant="58" id="bbM-Ap-dhs"/>
+                            <constraint firstItem="rFo-dx-qKH" firstAttribute="top" secondItem="Oeb-x3-v0N" secondAttribute="bottom" constant="21" id="cWN-sb-q9C"/>
+                            <constraint firstItem="vxC-jO-3QV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="i9V-Ch-Bhx"/>
+                            <constraint firstItem="xr5-SW-RLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="iHD-mI-DDf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vxC-jO-3QV" secondAttribute="trailing" constant="68" id="lfq-97-jJh"/>
+                            <constraint firstItem="xr5-SW-RLb" firstAttribute="top" secondItem="vxC-jO-3QV" secondAttribute="bottom" constant="101" id="qUw-ya-tr9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xr5-SW-RLb" secondAttribute="bottom" constant="331" id="z8v-ca-gmF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btcPickerView" destination="Oeb-x3-v0N" id="cIT-Wm-LjP"/>
+                        <outlet property="btcPriceLabel" destination="xr5-SW-RLb" id="CQZ-Sd-ZbZ"/>
+                        <outlet property="pageSwipe" destination="rFo-dx-qKH" id="aTi-aS-F7E"/>
+                        <segue destination="7Tp-qs-wgE" kind="show" identifier="btcToCardano" id="3y8-v9-5t2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="27"/>
+        </scene>
+        <!--Cardano View Controller-->
+        <scene sceneID="vun-dn-LCM">
+            <objects>
+                <viewController id="7Tp-qs-wgE" customClass="CardanoViewController" customModule="crypto_ticker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AMa-tb-4l7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardanologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="MwF-Uk-v2C">
+                                <rect key="frame" x="67" y="136" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A3-Kn-xBt">
+                                <rect key="frame" x="35" y="365" width="308" height="82"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1M-A4-SNi">
+                                <rect key="frame" x="0.0" y="504" width="375" height="216"/>
+                            </pickerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oKE-GC-mpB">
+                                <rect key="frame" x="168" y="741" width="39" height="37"/>
+                                <connections>
+                                    <action selector="swipeButtonPressed:" destination="7Tp-qs-wgE" eventType="valueChanged" id="a7W-HJ-zOU"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.44313725490196076" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wde-UT-mRW" firstAttribute="bottom" secondItem="q1M-A4-SNi" secondAttribute="bottom" constant="58" id="1u8-Ap-Y3G"/>
+                            <constraint firstItem="9A3-Kn-xBt" firstAttribute="leading" secondItem="Wde-UT-mRW" secondAttribute="leading" constant="35" id="5Gs-n8-VmY"/>
+                            <constraint firstItem="q1M-A4-SNi" firstAttribute="top" secondItem="9A3-Kn-xBt" secondAttribute="bottom" constant="57" id="9Am-bC-PUm"/>
+                            <constraint firstItem="Wde-UT-mRW" firstAttribute="trailing" secondItem="9A3-Kn-xBt" secondAttribute="trailing" constant="32" id="EBh-Gi-ZPD"/>
+                            <constraint firstItem="9A3-Kn-xBt" firstAttribute="top" secondItem="Wde-UT-mRW" secondAttribute="top" constant="321" id="Nv0-jG-4yr"/>
+                            <constraint firstItem="oKE-GC-mpB" firstAttribute="top" secondItem="q1M-A4-SNi" secondAttribute="bottom" constant="21" id="OVN-kP-J9W"/>
+                            <constraint firstItem="oKE-GC-mpB" firstAttribute="leading" secondItem="Wde-UT-mRW" secondAttribute="leading" constant="168" id="UFX-GX-ACi"/>
+                            <constraint firstItem="oKE-GC-mpB" firstAttribute="bottom" secondItem="Wde-UT-mRW" secondAttribute="bottom" id="UeP-vN-Noi"/>
+                            <constraint firstItem="q1M-A4-SNi" firstAttribute="leading" secondItem="Wde-UT-mRW" secondAttribute="leading" id="Y2d-KT-iil"/>
+                            <constraint firstItem="Wde-UT-mRW" firstAttribute="trailing" secondItem="oKE-GC-mpB" secondAttribute="trailing" constant="168" id="YN4-qu-sY0"/>
+                            <constraint firstItem="9A3-Kn-xBt" firstAttribute="top" secondItem="MwF-Uk-v2C" secondAttribute="bottom" constant="101" id="be2-7O-AXD"/>
+                            <constraint firstItem="Wde-UT-mRW" firstAttribute="bottom" secondItem="9A3-Kn-xBt" secondAttribute="bottom" constant="331" id="dWJ-K8-I4Z"/>
+                            <constraint firstItem="MwF-Uk-v2C" firstAttribute="top" secondItem="Wde-UT-mRW" secondAttribute="top" constant="92" id="f2p-yJ-hfc"/>
+                            <constraint firstItem="Wde-UT-mRW" firstAttribute="trailing" secondItem="MwF-Uk-v2C" secondAttribute="trailing" constant="68" id="mxI-vA-Wfe"/>
+                            <constraint firstItem="q1M-A4-SNi" firstAttribute="trailing" secondItem="Wde-UT-mRW" secondAttribute="trailing" id="r6B-SY-QwM"/>
+                            <constraint firstItem="MwF-Uk-v2C" firstAttribute="leading" secondItem="Wde-UT-mRW" secondAttribute="leading" constant="67" id="uJy-YW-aPP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wde-UT-mRW"/>
+                    </view>
+                    <connections>
+                        <outlet property="CardanoPickerView" destination="q1M-A4-SNi" id="coQ-fL-ANM"/>
+                        <outlet property="CardanoPriceField" destination="9A3-Kn-xBt" id="I7S-Rc-Wfw"/>
+                        <outlet property="pageSwipe" destination="oKE-GC-mpB" id="Vub-GP-Ka6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="AdaToBtc" id="ibm-r5-sIY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oah-IQ-lXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bitcoin.png" width="333" height="333"/>
+        <image name="cardanologo.png" width="2500" height="2310"/>
+    </resources>
+</document>
