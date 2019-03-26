@@ -58,6 +58,7 @@ class CardanoViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         } else {
             if dataModel.err != nil {
                 print(dataModel.err!)
+                CardanoPriceField.text = "Connection Error"
             }
         }
         
@@ -66,9 +67,5 @@ class CardanoViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func setPriceLabel(finalPrice: String){
         CardanoPriceField.text = "\(dataModel.finalSymbol) " + finalPrice
     }
-    
-    func errorHandler(err: Error) {
-        print(err)
-        CardanoPriceField.text = "Connection Error"
-    }
+
 }

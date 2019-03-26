@@ -14,10 +14,9 @@ class BtcViewController:  UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var btcPriceLabel: UILabel!
     @IBOutlet weak var btcPickerView: UIPickerView!
-
     @IBOutlet weak var pageSwipe: UIPageControl!
     
-    // not sure if data model is the right name for that class
+    // not 100% sure if data model is the right name for that class but i want to sound fancy
     let dataModel = DataModel()
     
     override func viewDidLoad() {
@@ -54,16 +53,19 @@ class BtcViewController:  UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //prepare for request in datamodel
         dataModel.finalSymbol = dataModel.currencySymbols[row]
         dataModel.finalCryptoCurrency = "BTC"
         dataModel.finalURL = dataModel.BaseURL + "/v1/cryptocurrency/quotes/latest?symbol=BTC&convert=" + dataModel.currency[row]
         dataModel.getPrice(url: dataModel.finalURL)
-    
+        // after request is made see if have a price to put on screen... this makes a lag ill fix tom. maybe a method in datamodel by request? we'll see.
         if dataModel.finalPrice != "" {
+            //once ready display on screen
             setPriceLabel(finalPrice: dataModel.finalPrice)
         } else {
              if dataModel.err != nil {
-             print(dataModel.err!)
+                print(dataModel.err!)
+                btcPriceLabel.text = "Connection Error"
             }
         }
     }
@@ -71,10 +73,6 @@ class BtcViewController:  UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func setPriceLabel(finalPrice: String) {
         btcPriceLabel.text = "\(dataModel.finalSymbol) " + finalPrice
     }
-    
-    func errorHandler(err: Error) {
-        print(err)
-        btcPriceLabel.text = "Connection Error"
-    }
+
 }
 
